@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-    <script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script>
+    <!-- <script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script> -->
     <style>
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
@@ -72,13 +72,13 @@
             <div class="hero-visual">
                 <div class="floating-elements">
                     <div class="float-element fe-1" style="opacity: 1; visibility: visible;"><i class="fab fa-python"></i></div>
-                    <div class="float-element fe-2" style="opacity: 1; visibility: visible;"><i class="fab fa-aws"></i></div>
-                    <div class="float-element fe-3" style="opacity: 1; visibility: visible;"><i class="fab fa-linux"></i></div>
-                    <div class="float-element fe-4" style="opacity: 1; visibility: visible;"><i class="fab fa-git-alt"></i></div>
-                    <div class="float-element fe-5" style="opacity: 1; visibility: visible;"><i class="fab fa-java"></i></div>
-                    <div class="float-element fe-6" style="opacity: 1; visibility: visible;"><i class="fas fa-database"></i></div>
-                    <div class="float-element fe-7" style="opacity: 1; visibility: visible;"><i class="fab fa-js"></i></div>
-                    <div class="float-element fe-8" style="opacity: 1; visibility: visible;"><i class="fab fa-html5"></i></div>
+                    <div class="float-element fe-2" style="opacity: 1; visibility: visible;"><i class="fab fa-java"></i></div>
+                    <div class="float-element fe-3" style="opacity: 1; visibility: visible;"><i class="fas fa-database"></i></div>
+                    <div class="float-element fe-4" style="opacity: 1; visibility: visible;"><i class="fab fa-js"></i></div>
+                    <div class="float-element fe-5" style="opacity: 1; visibility: visible;"><i class="fab fa-html5"></i></div>
+                    <div class="float-element fe-6" style="opacity: 1; visibility: visible;"><i class="fab fa-aws"></i></div>
+                    <div class="float-element fe-7" style="opacity: 1; visibility: visible;"><i class="fab fa-linux"></i></div>
+                    <div class="float-element fe-8" style="opacity: 1; visibility: visible;"><i class="fab fa-git-alt"></i></div>
                     
                 </div>
             </div>
@@ -354,8 +354,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
+                <div class="contact-form" >
+                    <form id="contactForm" method="POST" action="/api/contact">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required="">
                         </div>
@@ -380,6 +380,10 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="./app.js"></script>
+    <script src="./app.js">
+        
+
+
+    </script>
 
 </body></html>

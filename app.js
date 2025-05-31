@@ -1,3 +1,29 @@
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault();  
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert("Message sent successfully!");
+                    document.getElementById("contactForm").reset();
+                } else {
+                    alert(`Error: ${data.error || "Failed to send message"}`);
+                }
+            } catch (err) {
+                console.error(err);
+                alert("Something went wrong. Please try again later.");
+            }
+        });
 // Initialize page animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Make all content visible immediately without animations
@@ -86,29 +112,43 @@ function setupMobileMenu() {
 // Contact form submission
 function setupContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // Get form values
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
-            
-            // Simple validation
+
             if (!name || !email || !message) {
                 alert('Please fill in all fields');
                 return;
             }
-            
-            // In a real application, you would send this data to a server
-            // For demo purposes, we'll just show a success message
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, message }),
+                });
+
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    alert('Failed to send message.');
+                }
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred while sending the message.');
+            }
         });
     }
 }
+
 
 // Add active class to nav links based on scroll position
 document.addEventListener('scroll', () => {
@@ -154,3 +194,5 @@ document.head.insertAdjacentHTML('beforeend', `
         }
     </style>
 `);
+
+

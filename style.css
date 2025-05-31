@@ -324,7 +324,7 @@ ul {
 /* Python */
 .fe-1 {
     top: 10%;
-    left: 45%;
+    left: 15%;
     animation-delay: 0s;
     background: var(--gradient-primary);
     color: white;
@@ -332,66 +332,65 @@ ul {
 
 /* AWS */
 .fe-2 {
-    top: 25%;
-    left: 30%;
+    top: 20%;
+    left: 35%;
     animation-delay: 1.5s;
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #f76707 0%, #fd7e14 100%);
     color: white;
 }
 /*linux */
 .fe-3 {
-    top: 25%;
-    left: 60%;
+    top: 30%;
+    left: 55%;
     animation-delay: 2.5s;
-    background: var(--gradient-dark);
+    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
     color: white;
 }
 
 /* Git */
 .fe-4 {
     top: 40%;
-    left: 15%;
+    left: 75%;
     animation-delay: 3.2s;
-    background: var(--gradient-dark);
+    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
     color: white;
 }
 
 /* HTML5 */
-.fe-8 {
-    top: 55%;
-    left: 30%;
+.fe-5 {
+    top: 50%;
+    left: 15%;
     animation-delay: 2.8s;
     background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
     color: white;
 }
 
 /* Java */
-.fe-5 {
-    top: 70%;
-    left: 45%;
+.fe-6 {
+    top: 60%;
+    left: 35%;
     animation-delay: 0.8s;
-    background: linear-gradient(135deg, #f76707 0%, #fd7e14 100%);
+    background: var(--gradient-secondary);
     color: white;
 }
 
 /* SQL/Database */
-.fe-6 {
-    top: 40%;
-    left: 75%;
+.fe-7 {
+    top: 70%;
+    left: 55%;
     animation-delay: 2.2s;
-    background: linear-gradient(135deg, #495057 0%, #6c757d 100%);
+    background: var(--gradient-dark);
     color: white;
 }
 
 /* JavaScript */
-.fe-7 {
-    top: 55%;
-    left: 60%;
+.fe-8 {
+    top: 80%;
+    left: 75%;
     animation-delay: 1.2s;
-    background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    background: var(--gradient-dark);
     color: white;
 }
-
    
 
 @keyframes float {
