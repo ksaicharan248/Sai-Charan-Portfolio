@@ -116,12 +116,20 @@ function setupContactForm() {
                 const data = await response.json();
                 if (response.ok) {
                     successMessage.style.display = "block";
+                    successMessage.style.color = "green";
                     errorMessage.style.display = "none";
                     document.getElementById("contactForm").reset();
+                    //after 10 seconds, hide the success message
+                    setTimeout(() => {
+                        successMessage.style.display = "none";
+                    }, 10000);
                 } else {
                     successMessage.style.display = "none";
                     errorMessage.style.display = "block";
-                    alert(`Error: ${data.error || "Failed to send message"}`);
+                    errorMessage.style.color = "red";
+                    setTimeout(() => {
+                        errorMessage.style.display = "none";
+                    }, 10000);
                 }   
             } catch (err) {
                 console.error(err);
