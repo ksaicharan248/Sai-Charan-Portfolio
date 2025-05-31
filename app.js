@@ -97,6 +97,8 @@ function setupContactForm() {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
+            const successMessage = document.getElementById("form-success");
+            const errorMessage = document.getElementById("form-error");
 
             if (!name || !email || !message) {
                 alert("Please fill in all fields");
@@ -113,9 +115,12 @@ function setupContactForm() {
 
                 const data = await response.json();
                 if (response.ok) {
-                    alert("Message sent successfully!");
+                    successMessage.style.display = "block";
+                    errorMessage.style.display = "none";
                     document.getElementById("contactForm").reset();
                 } else {
+                    successMessage.style.display = "none";
+                    errorMessage.style.display = "block";
                     alert(`Error: ${data.error || "Failed to send message"}`);
                 }   
             } catch (err) {
