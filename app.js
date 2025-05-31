@@ -26,9 +26,9 @@ document
       alert("Something went wrong. Please try again later.");
     }
   });
-// Initialize page animations when DOM is loaded
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Make all content visible immediately without animations
+ 
   document
     .querySelectorAll(
       "section, .timeline-item, .skill-category, .project-card, .achievement-item, .more-card, .contact-item"
@@ -39,17 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.visibility = "visible";
     });
 
-  // Mobile menu toggle
+  
   setupMobileMenu();
 
-  // Form submission
   setupContactForm();
 
-  // Floating elements animation
   animateFloatingElements();
 });
 
-// Animate floating elements only
+
 function animateFloatingElements() {
   const floatElements = document.querySelectorAll(".float-element");
 
@@ -59,21 +57,21 @@ function animateFloatingElements() {
   });
 }
 
-// Mobile menu toggle
+
 function setupMobileMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
-      // Create mobile menu if it doesn't exist
+      
       if (!document.querySelector(".mobile-menu")) {
         const mobileMenu = document.createElement("div");
         mobileMenu.className = "mobile-menu";
         mobileMenu.innerHTML = navLinks.innerHTML;
         document.body.appendChild(mobileMenu);
 
-        // Style the mobile menu
+        
         mobileMenu.style.position = "fixed";
         mobileMenu.style.top = "70px";
         mobileMenu.style.left = "0";
@@ -86,7 +84,7 @@ function setupMobileMenu() {
         mobileMenu.style.gap = "20px";
         mobileMenu.style.zIndex = "999";
 
-        // Style the links
+       
         const links = mobileMenu.querySelectorAll("a");
         links.forEach((link) => {
           link.style.display = "block";
@@ -102,7 +100,7 @@ function setupMobileMenu() {
 
       const mobileMenu = document.querySelector(".mobile-menu");
 
-      // Toggle mobile menu
+      
       if (
         mobileMenu.style.display === "none" ||
         mobileMenu.style.display === ""
@@ -117,7 +115,7 @@ function setupMobileMenu() {
   }
 }
 
-// Contact form submission
+
 function setupContactForm() {
   const contactForm = document.getElementById("contactForm");
 
