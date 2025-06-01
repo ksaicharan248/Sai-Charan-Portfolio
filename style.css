@@ -211,14 +211,15 @@ ul {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
+
     background: var(--gradient-primary);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* -webkit-text-fill-color: var(--transition); */
     background-clip: text;
-    color: var(--primary-color); /* Fallback */
+    color: var(--primary-color); 
 }
 
 .typing-animation {
