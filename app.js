@@ -89,6 +89,7 @@ function setupMobileMenu() {
 
 function setupContactForm() {
     const contactForm = document.getElementById("contactForm");
+    const submitButton = document.getElementById("submitButton");
 
     if (contactForm) {
         contactForm.addEventListener("submit", async (e) => {
@@ -104,6 +105,9 @@ function setupContactForm() {
                 alert("Please fill in all fields");
                 return;
             }
+            submitButton.disabled = true;
+            submitButton.style.opacity = "0.6";
+            submitButton.textContent = "Sending...";
             try {
                 const response = await fetch("/api/contact", {
                     method: "POST",
@@ -132,8 +136,17 @@ function setupContactForm() {
                     }, 10000);
                 }   
             } catch (err) {
-                console.error(err);
-                alert("Something went wrong. Please try again later.");
+                successMessage.style.display = "none";
+                    errorMessage.style.display = "block";
+                    errorMessage.style.color = "red";
+                    setTimeout(() => {
+                        errorMessage.style.display = "none";
+                    }, 10000);
+                    console.error("Error sending message:", err);
+            }finally{
+                submitButton.disabled = false;
+                submitButton.style.opacity = "1";
+                submitButton.textContent = "Send Message";
             }
         });
     }
