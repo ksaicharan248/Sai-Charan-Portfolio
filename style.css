@@ -13,6 +13,8 @@
     --gradient-secondary: linear-gradient(135deg, #ff6584 0%, #eb3349 100%);
     --gradient-accent: linear-gradient(135deg, #00c9a7 0%, #00b4d8 100%);
     --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #1a1a2e 100%);
+    --gradient-blue: linear-gradient(135deg, #00c9a7 0%, #00b4d8 100%);
+    --gradient-voilet: linear-gradient(135deg, #6c63ff 0%, #4834d4 100%);
 }
 
 * {
@@ -392,6 +394,24 @@ ul {
     background: var(--gradient-dark);
     color: white;
 }
+
+/* React */
+.fe-9 {
+    top: 15%;
+    left: 70%;
+    animation-delay: 3s;
+    background: var(--gradient-blue);
+    color: white;
+}
+
+/* CSS */
+.fe-10 {
+    top: 75%;
+    left: 20%;
+    animation-delay: 1.8s;
+    background: var(--gradient-dark);
+    color: white;
+}   
    
 
 @keyframes float {
