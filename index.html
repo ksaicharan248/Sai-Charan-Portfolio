@@ -17,14 +17,17 @@
         <div class="nav-container" >
             <div class="nav-logo">
                 <h1>K Sai Charan</h1>
+                
             </div>
             <div class="nav-links">
                 <a href="#hero" class="active">Home</a>
                 <a href="#about" class="">About</a>
-                <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <a href="/api/download" download>Resume</a>
+                <button id="themeToggle" class="btn btn-secondary">🌙</button>
+
             </div>
             <div class="hamburger">
                 <span></span>
@@ -39,16 +42,15 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="typing-animation">Sai Charan</span>
+                    <span class="typing-animation">Sai Charan K</span>
                 </h1>
                 <h2 class="hero-subtitle">
-                    <span>An Electronics & Communication Engineer</span></h2>
+                    <span>Program Analyst Trainee @ Cognizant</span></h2>
                 <p class="hero-description">
-                    Passionate B.Tech graduate with expertise in AI/ML, Python development, and cloud computing. 
-                    Building innovative solutions with modern technologies.
+                    Emerging software developer with practical exposure to Java Full Stack development, cloud technologies, and automation. Currently working at Cognizant and building a strong foundation through real-world projects and continuous learning.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#work-experience" class="btn btn-primary">Work Experience</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="hero-social">
@@ -81,15 +83,11 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I am an enthusiastic and detail-oriented B.Tech graduate in Electronics and Communication Engineering, aspiring to build a career in software engineering
-                        with a strong passion for technology, problem-solving, and software development. I have a solid foundation
-                        in Linux systems, Python scripting, cloud computing, and modern development practices.
-                    </p>
-                    <p>
-                        I've worked on hands-on projects involving web automation, AI/ML integration, backend development, 
-                        and IoT systems, applying theoretical knowledge to real-world problems. I bring strong communication,
-                        analytical, and teamwork skills to every project.
-                    </p>
+                    I’m a passionate and adaptable software developer with a background in Electronics and Communication Engineering. Currently working at Cognizant as a Program Analyst Trainee, where I’m gaining practical experience in Java Full Stack development and modern enterprise technologies.
+                </p>
+                <p>
+                    My interests lie in web development, automation, cloud computing, and AI/ML. I’ve developed projects involving web automation, intelligent systems, and backend tools. I value continuous learning and enjoy applying technical knowledge to real-world challenges while collaborating in dynamic environments.
+                </p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
@@ -109,41 +107,30 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education" style="opacity: 1; transform: none; visibility: visible;">
+    <!-- Work Experience Section -->
+    <section id="work-experience" class="work-experience">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-timeline">
-                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>B.Tech in Electronics &amp; Communication Engineering</h3>
-                        <h4>Sreenivasa Institute of Technology and Management Studies</h4>
-                        <span class="timeline-date">2020 - 2024</span>
-                        <p>CGPA: 8.24/10</p>
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content work-flex">
+                    <!-- Left Side: Logo -->
+                    <div class="work-logo">
+                        <img src="https://companieslogo.com/img/orig/CTSH-82a8444b.png?t=1720244491" alt="Cognizant Logo" class="company-logo">
                     </div>
-                </div>
-                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Intermediate (Class XII), State Board</h3>
-                        <h4>Sri Chaitanya Junior College</h4>
-                        <span class="timeline-date">2018 - 2020</span>
-                        <p>CGPA: 9.01/10</p>
-                    </div>
-                </div>
-                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Secondary Education (Class X), State Board</h3>
-                        <h4>Sri Chaitanya Techno School</h4>
-                        <span class="timeline-date">2017 - 2018</span>
-                        <p>CGPA: 9.7/10</p>
+                    <!-- Right Side: Details -->
+                    <div class="work-details">
+                        <h3 class="job-title">Program Analyst Trainee</h3>
+                        <h5 class="company-name">Cognizant</h5>
+                        <p class="technology-used">Technology: Java Full Stack Development</p>
+                        <span class="timeline-date">June 2025 - Present</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    
 
     <!-- Skills Section -->
     <section id="skills" class="skills" style="opacity: 1; transform: none; visibility: visible;">
@@ -160,7 +147,7 @@
                 <i class="devicon-react-original" style="color: #4584b6;"></i>
                 <i class="devicon-mysql-plain colored"></i>
                 <i class="devicon-nodejs-plain colored"></i>
-                <i class="fab fa-aws" style="color: black;"></i>
+                <i class="fab fa-aws aws-icon" style="color: black;"></i>
                 <i class="devicon-git-plain colored"></i>
                 <i class="devicon-linux-plain colored"></i>
                 <i class="devicon-ubuntu-plain colored"></i>
@@ -205,6 +192,43 @@
             </div>
         </div>
     </section>
+
+<!-- Education Section -->
+    <section id="education" class="education" style="opacity: 1; transform: none; visibility: visible;">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>B.Tech in Electronics &amp; Communication Engineering</h3>
+                        <h4>Sreenivasa Institute of Technology and Management Studies</h4>
+                        <span class="timeline-date">2020 - 2024</span>
+                        <p>CGPA: 8.24/10</p>
+                    </div>
+                </div>
+                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Intermediate (Class XII), State Board</h3>
+                        <h4>Sri Chaitanya Junior College</h4>
+                        <span class="timeline-date">2018 - 2020</span>
+                        <p>CGPA: 9.01/10</p>
+                    </div>
+                </div>
+                <div class="timeline-item" style="opacity: 1; transform: none; visibility: visible;">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Secondary Education (Class X), State Board</h3>
+                        <h4>Sri Chaitanya Techno School</h4>
+                        <span class="timeline-date">2017 - 2018</span>
+                        <p>CGPA: 9.7/10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Projects Section -->
     <section id="projects" class="projects" style="opacity: 1; transform: none; visibility: visible;">

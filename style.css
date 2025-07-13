@@ -659,6 +659,57 @@ ul {
     transform: translateY(-2px);
 }
 
+/* Work Section */
+
+.work-flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.work-logo img.company-logo {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.work-details {
+    display: flex;
+    flex-direction: column;
+}
+.work-details h5 {
+    margin: 5px 0 0 0;
+}
+.work-details h3 {
+    margin: 5px 0 0 0;
+}   
+
+.work-details span{
+    margin: 5px 0 0 0;
+    width: 180px;
+}
+
+.job-title {
+    color: var(--dark-color);
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.company-name {
+    color: var(--text-color);
+    font-size: 16px;
+    margin: 0 0 0 0;
+}
+
+.technology-used {
+    color: var(--text-color);
+    font-size: 14px;
+    margin: 0px 0 0 0;
+}
+
+
+
 /* Projects Section */
 .projects {
     background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(255, 101, 132, 0.05) 100%);
@@ -1093,4 +1144,126 @@ body section:not(.hero) {
     .hero-buttons .btn {
         width: 100%;
     }
+}
+
+
+/* ===================== DARK THEME ===================== */
+body.dark-theme {
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+.dark-theme {
+    --primary-color: #9b9eff;
+    --secondary-color: #ff8ca3;
+    --accent-color: #00f2c3;
+    --dark-color: #f1f1f1;
+    --light-color: #1c1c1c;
+    --text-color: #eaeaea;
+
+    --box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+
+    --gradient-primary: linear-gradient(135deg, #9b9eff 0%, #7164ff 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff8ca3 0%, #ff4e69 100%);
+    --gradient-accent: linear-gradient(135deg, #00f2c3 0%, #00c4eb 100%);
+    --gradient-dark: linear-gradient(135deg, #1c1c1c 0%, #0d0d0d 100%);
+    --gradient-blue: linear-gradient(135deg, #00f2c3 0%, #00c4eb 100%);
+    --gradient-voilet: linear-gradient(135deg, #9b9eff 0%, #7164ff 100%);
+}
+
+/* Backgrounds */
+.dark-theme .about,
+.dark-theme .skills,
+.dark-theme .contact,
+.dark-theme .achievements,
+.dark-theme .projects,
+.dark-theme .more-info {
+    background-color: #1c1c1c;
+}
+
+/* Section Titles */
+.dark-theme .section-title {
+    color: var(--dark-color);
+}
+
+/* Navbar */
+.dark-theme .navbar {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.dark-theme .btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.dark-theme .btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.dark-theme .btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Hero Section */
+.dark-theme .hero {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 100%);
+}
+
+.dark-theme .hero-description,
+.dark-theme .project-card p,
+.dark-theme .achievement-item p,
+.dark-theme .about-text p {
+    color: #cccccc;
+}
+
+/* Cards & Boxes */
+.dark-theme .timeline-content,
+.dark-theme .project-card,
+.dark-theme .achievement-item,
+.dark-theme .more-card,
+.dark-theme .skill-category {
+    background-color: #252525;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* AWS Icon in Dark Theme */
+.dark-theme .aws-icon {
+    color: white;
+}
+
+/* Timeline Dots */
+.dark-theme .timeline-marker {
+    background: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+/* Input Fields */
+.dark-theme input,
+.dark-theme textarea {
+    background-color: #2f2f2f;
+    color: var(--text-color);
+    border: 1px solid #444;
+}
+
+.dark-theme input:focus,
+.dark-theme textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(155, 158, 255, 0.3);
+}
+
+/* Footer */
+.dark-theme .footer {
+    background: var(--gradient-dark);
+    color: white;
+}
+
+/* Hover Effects */
+.dark-theme .skill-tag:hover {
+    background: var(--primary-color);
+    color: white;
 }

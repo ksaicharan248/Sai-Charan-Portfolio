@@ -176,6 +176,24 @@ document.addEventListener("scroll", () => {
   });
 });
 
+
+// Toggle Dark Theme
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("themeToggle");
+    const isDark = localStorage.getItem("dark-theme") === "true";
+
+    if (isDark) {
+        document.body.classList.add("dark-theme");
+        toggleButton.textContent = "☀️";
+    }
+
+    toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+        const isNowDark = document.body.classList.contains("dark-theme");
+        localStorage.setItem("dark-theme", isNowDark);
+        toggleButton.textContent = isNowDark ? "☀️" : "🌙";
+    });
+});
 // Add styles for active hamburger
 document.head.insertAdjacentHTML(
   "beforeend",
