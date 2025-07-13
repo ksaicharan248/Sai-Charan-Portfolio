@@ -1165,7 +1165,20 @@ body section:not(.hero) {
         width: 100%;
     }
 }
+#themeToggle {
+    display: inline-block !important;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    margin-left: auto;
+}
 
+@media (max-width: 768px) {
+    #themeToggle {
+        display: inline-block !important;
+    }
+}
 
 /* ===================== DARK THEME ===================== */
 body.dark-theme {

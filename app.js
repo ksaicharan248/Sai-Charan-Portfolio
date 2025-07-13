@@ -178,22 +178,26 @@ document.addEventListener("scroll", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("themeToggle");
+    const toggleButton = document.getElementById("themeToggle");
 
-  // Apply saved theme on load
-  if (localStorage.getItem("dark-theme") === "true") {
-    document.body.classList.add("dark-theme");
-    if (toggleButton) toggleButton.textContent = "☀️";
-  }
+    // Check saved preference
+    const isDark = localStorage.getItem("theme") === "dark";
+    if (isDark) {
+        document.body.classList.add("dark-theme");
+        if (toggleButton) toggleButton.textContent = "☀️";
+    } else {
+        document.body.classList.remove("dark-theme");
+        if (toggleButton) toggleButton.textContent = "🌙";
+    }
 
-  if (toggleButton) {
-    toggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-theme");
-      const isDark = document.body.classList.contains("dark-theme");
-      localStorage.setItem("dark-theme", isDark);
-      toggleButton.textContent = isDark ? "☀️" : "🌙";
-    });
-  }
+    // Toggle on click
+    if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+            const nowDark = document.body.classList.toggle("dark-theme");
+            localStorage.setItem("theme", nowDark ? "dark" : "light");
+            toggleButton.textContent = nowDark ? "☀️" : "🌙";
+        });
+    }
 });
 // Add styles for active hamburger
 document.head.insertAdjacentHTML(
