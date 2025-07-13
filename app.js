@@ -177,22 +177,23 @@ document.addEventListener("scroll", () => {
 });
 
 
-// Toggle Dark Theme
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("themeToggle");
-    const isDark = localStorage.getItem("dark-theme") === "true";
+  const toggleButton = document.getElementById("themeToggle");
 
-    if (isDark) {
-        document.body.classList.add("dark-theme");
-        toggleButton.textContent = "☀️";
-    }
+  // Apply saved theme on load
+  if (localStorage.getItem("dark-theme") === "true") {
+    document.body.classList.add("dark-theme");
+    if (toggleButton) toggleButton.textContent = "☀️";
+  }
 
+  if (toggleButton) {
     toggleButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-theme");
-        const isNowDark = document.body.classList.contains("dark-theme");
-        localStorage.setItem("dark-theme", isNowDark);
-        toggleButton.textContent = isNowDark ? "☀️" : "🌙";
+      document.body.classList.toggle("dark-theme");
+      const isDark = document.body.classList.contains("dark-theme");
+      localStorage.setItem("dark-theme", isDark);
+      toggleButton.textContent = isDark ? "☀️" : "🌙";
     });
+  }
 });
 // Add styles for active hamburger
 document.head.insertAdjacentHTML(
