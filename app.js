@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
- 
+  // 1. Show animation elements
   document
     .querySelectorAll(
       "section, .timeline-item, .skill-category, .project-card, .achievement-item, .more-card, .contact-item"
@@ -10,13 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.visibility = "visible";
     });
 
-  
+  // 2. Mobile menu setup
   setupMobileMenu();
 
+  // 3. Contact form setup
   setupContactForm();
 
+  // 4. Floating icons
   animateFloatingElements();
+
+  // ✅ 5. Theme toggle setup
+  const toggleButton = document.getElementById("themeToggle");
+
+  // Load theme preference
+  const isDark = localStorage.getItem("theme") === "dark";
+  if (isDark) {
+    document.body.classList.add("dark-theme");
+    toggleButton.textContent = "☀️";
+  } else {
+    document.body.classList.remove("dark-theme");
+    toggleButton.textContent = "🌙";
+  }
+
+  // Toggle theme on click
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      const nowDark = document.body.classList.toggle("dark-theme");
+      localStorage.setItem("theme", nowDark ? "dark" : "light");
+      toggleButton.textContent = nowDark ? "☀️" : "🌙";
+    });
+  }
 });
+
+
 
 
 function animateFloatingElements() {
@@ -32,22 +58,22 @@ function animateFloatingElements() {
 function setupMobileMenu() {
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
+  const getTheme = localStorage.getItem("theme");
 
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", () => {
-      
+
       if (!document.querySelector(".mobile-menu")) {
         const mobileMenu = document.createElement("div");
         mobileMenu.className = "mobile-menu";
         mobileMenu.innerHTML = navLinks.innerHTML;
         document.body.appendChild(mobileMenu);
 
-        
+
         mobileMenu.style.position = "fixed";
         mobileMenu.style.top = "70px";
         mobileMenu.style.left = "0";
         mobileMenu.style.width = "100%";
-        mobileMenu.style.background = "white";
         mobileMenu.style.padding = "20px";
         mobileMenu.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.1)";
         mobileMenu.style.display = "none";
@@ -55,7 +81,7 @@ function setupMobileMenu() {
         mobileMenu.style.gap = "20px";
         mobileMenu.style.zIndex = "999";
 
-       
+
         const links = mobileMenu.querySelectorAll("a");
         links.forEach((link) => {
           link.style.display = "block";
@@ -71,7 +97,7 @@ function setupMobileMenu() {
 
       const mobileMenu = document.querySelector(".mobile-menu");
 
-      
+
       if (
         mobileMenu.style.display === "none" ||
         mobileMenu.style.display === ""
@@ -88,68 +114,68 @@ function setupMobileMenu() {
 
 
 function setupContactForm() {
-    const contactForm = document.getElementById("contactForm");
-    const submitButton = document.getElementById("submitButton");
+  const contactForm = document.getElementById("contactForm");
+  const submitButton = document.getElementById("submitButton");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
-            const successMessage = document.getElementById("form-success");
-            const errorMessage = document.getElementById("form-error");
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const successMessage = document.getElementById("form-success");
+      const errorMessage = document.getElementById("form-error");
 
-            if (!name || !email || !message) {
-                alert("Please fill in all fields");
-                return;
-            }
-            submitButton.disabled = true;
-            submitButton.style.opacity = "0.6";
-            submitButton.textContent = "Sending...";
-            try {
-                const response = await fetch("/api/contact", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ name, email, message }),
-                });
-
-                const data = await response.json();
-                if (response.ok) {
-                    successMessage.style.display = "block";
-                    successMessage.style.color = "green";
-                    errorMessage.style.display = "none";
-                    document.getElementById("contactForm").reset();
-                    //after 10 seconds, hide the success message
-                    setTimeout(() => {
-                        successMessage.style.display = "none";
-                    }, 10000);
-                } else {
-                    successMessage.style.display = "none";
-                    errorMessage.style.display = "block";
-                    errorMessage.style.color = "red";
-                    setTimeout(() => {
-                        errorMessage.style.display = "none";
-                    }, 10000);
-                }   
-            } catch (err) {
-                successMessage.style.display = "none";
-                    errorMessage.style.display = "block";
-                    errorMessage.style.color = "red";
-                    setTimeout(() => {
-                        errorMessage.style.display = "none";
-                    }, 10000);
-                    console.error("Error sending message:", err);
-            }finally{
-                submitButton.disabled = false;
-                submitButton.style.opacity = "1";
-                submitButton.textContent = "Send Message";
-            }
+      if (!name || !email || !message) {
+        alert("Please fill in all fields");
+        return;
+      }
+      submitButton.disabled = true;
+      submitButton.style.opacity = "0.6";
+      submitButton.textContent = "Sending...";
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
         });
-    }
+
+        const data = await response.json();
+        if (response.ok) {
+          successMessage.style.display = "block";
+          successMessage.style.color = "green";
+          errorMessage.style.display = "none";
+          document.getElementById("contactForm").reset();
+          //after 10 seconds, hide the success message
+          setTimeout(() => {
+            successMessage.style.display = "none";
+          }, 10000);
+        } else {
+          successMessage.style.display = "none";
+          errorMessage.style.display = "block";
+          errorMessage.style.color = "red";
+          setTimeout(() => {
+            errorMessage.style.display = "none";
+          }, 10000);
+        }
+      } catch (err) {
+        successMessage.style.display = "none";
+        errorMessage.style.display = "block";
+        errorMessage.style.color = "red";
+        setTimeout(() => {
+          errorMessage.style.display = "none";
+        }, 10000);
+        console.error("Error sending message:", err);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.style.opacity = "1";
+        submitButton.textContent = "Send Message";
+      }
+    });
+  }
 }
 
 // Add active class to nav links based on scroll position
@@ -177,28 +203,7 @@ document.addEventListener("scroll", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.getElementById("themeToggle");
 
-    // Check saved preference
-    const isDark = localStorage.getItem("theme") === "dark";
-    if (isDark) {
-        document.body.classList.add("dark-theme");
-        if (toggleButton) toggleButton.textContent = "☀️";
-    } else {
-        document.body.classList.remove("dark-theme");
-        if (toggleButton) toggleButton.textContent = "🌙";
-    }
-
-    // Toggle on click
-    if (toggleButton) {
-        toggleButton.addEventListener("click", () => {
-            const nowDark = document.body.classList.toggle("dark-theme");
-            localStorage.setItem("theme", nowDark ? "dark" : "light");
-            toggleButton.textContent = nowDark ? "☀️" : "🌙";
-        });
-    }
-});
 // Add styles for active hamburger
 document.head.insertAdjacentHTML(
   "beforeend",
