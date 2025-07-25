@@ -85,7 +85,7 @@ export default async function handler(req, res) {
                     </div>
                 </div>
             `,
-            replyTo: sanitizedData.email
+            replyTo: email
         };
 
         // Auto-reply to sender
@@ -104,8 +104,7 @@ export default async function handler(req, res) {
                             <p style="font-size: 18px; color: #333; margin-top: 0;">Hi ${name},</p>
                             
                             <p style="color: #666; line-height: 1.8;">
-                                Thank you for reaching out through my portfolio! I've received your message about 
-                                "<strong style="color: #667eea;">${subject}</strong>" and I'll get back to you as soon as possible.
+                                Thank you for reaching out through my portfolio! I've received your message and I'll get back to you as soon as possible.
                             </p>
                             
                             <p style="color: #666; line-height: 1.8;">
