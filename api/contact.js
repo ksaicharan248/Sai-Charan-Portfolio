@@ -76,7 +76,7 @@ export default async function handler(req, res) {
                         
                         <div style="text-align: center; margin-top: 20px; color: #666;">
                             <p style="margin: 0; font-size: 14px;">
-                                This message was sent from your Elite Portfolio contact form.
+                                This message was sent from your Portfolio contact form.
                             </p>
                             <p style="margin: 5px 0 0 0; font-size: 12px;">
                                 Time: ${new Date().toLocaleString()}
@@ -104,12 +104,11 @@ export default async function handler(req, res) {
                             <p style="font-size: 18px; color: #333; margin-top: 0;">Hi ${name},</p>
                             
                             <p style="color: #666; line-height: 1.8;">
-                                Thank you for reaching out through my portfolio! I've received your message and I'll get back to you as soon as possible.
+                                Thank you very much for reaching out to us. We truly appreciate you taking the time to contact us.
                             </p>
                             
                             <p style="color: #666; line-height: 1.8;">
-                                I appreciate your interest and will respond within 24 hours. In the meantime, feel free to 
-                                explore my portfolio and check out my latest projects.
+                                Rest assured, we have received your message and will get back to you as soon as possible.
                             </p>
                             
                             <div style="background: #f0f4ff; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; margin: 25px 0;">
@@ -121,7 +120,7 @@ export default async function handler(req, res) {
                             <p style="color: #666; margin-bottom: 0;">
                                 Best regards,<br>
                                 <strong style="color: #667eea;">Sai Charan K</strong><br>
-                                <span style="color: #999; font-size: 14px;">Software Developer & Tech Enthusiast</span>
+                                <span style="color: #999; font-size: 14px;">Tech Enthusiast</span>
                             </p>
                         </div>
                         
